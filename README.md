@@ -1,2 +1,2 @@
 # datamart
-reporting views for public prep.  definitely getting a cuter name soon.
+SQL reporting views for amazon redshift at public prep.  definitely getting a cuter name soon.

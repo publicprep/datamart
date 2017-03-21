@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW assess$test_prep_math$results AS
+--CREATE OR REPLACE VIEW assess$test_prep_math$results AS
 WITH math_assess AS
     (SELECT *
      FROM assess$test_prep_math$assessments
@@ -11,7 +11,10 @@ SELECT ma.*,
        r.mastered,
        r.percent_correct,
        r.points,
-       r.points_possible
+       r.points_possible,
+       r.*
 FROM math_assess ma
-LEFT OUTER JOIN il_dna_assessments.agg_student_responses r
-  ON ma.assessment_id = r.assessment_id;
+LEFT OUTER JOIN assess$agg_student_responses$clean r
+  ON ma.assessment_id = r.assessment_id
+WHERE r.student_id =  1142
+;

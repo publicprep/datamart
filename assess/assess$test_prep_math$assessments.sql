@@ -1,6 +1,4 @@
-DROP VIEW assess$test_prep_math$assessments;
-
-CREATE VIEW assess$test_prep_math$assessments AS
+CREATE OR REPLACE VIEW assess$test_prep_math$assessments AS
 SELECT a.assessment_id
       ,a.academic_year
       ,a.title

@@ -20,5 +20,7 @@ SELECT a.assessment_id
    AND a.academic_year = 2017
    -- KAS
    --AND u.user_id = 309
-   AND a.title LIKE '2016-17 Math Test Prep%'
+   AND (a.title LIKE '2016-17 Math Test Prep%' OR
+        a.title LIKE '%2016-17 NY MS Math Quiz Week%')
+   AND a.title NOT LIKE 'Copy of [External]%'
 ORDER BY a.title ASC;

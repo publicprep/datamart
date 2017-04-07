@@ -18,10 +18,9 @@ ela_enr AS
         es.teacher_last,
         ss.student_id
  FROM ela_sections es
-   JOIN il_public.section_student_aff ss
+   JOIN il_dna_public.section_student_aff ss
      ON es.section_id = ss.section_id
- WHERE ss.active = TRUE
-   AND ss.leave_date IS NULL
+ WHERE ss.leave_date IS NULL
 ),
 ela_rollup AS
 (SELECT course_name,

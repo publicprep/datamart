@@ -10,17 +10,17 @@ SELECT sc.section_id,
        sites.site_name,
        users.first_name AS teacher_first,
        users.last_name AS teacher_last
-FROM il_public.sections
-JOIN il_public.section_course_aff sc
+FROM il_dna_public.sections
+JOIN il_dna_public.section_course_aff sc
   ON sections.section_id = sc.section_id
-JOIN il_public.section_teacher_aff st
+JOIN il_dna_public.section_teacher_aff st
   ON sections.section_id = st.section_id
  AND st.primary_teacher = TRUE
-JOIN il_public.courses c
+JOIN il_dna_public.courses c
   ON sc.course_id = c.course_id
-LEFT OUTER JOIN il_public.rooms r
+LEFT OUTER JOIN il_dna_public.rooms r
   ON sections.room_id = r.room_id
-JOIN il_public.sites
+JOIN il_dna_public.sites
   ON r.site_id = sites.site_id
-JOIN il_public.users
+JOIN il_dna_public.users
   ON st.user_id = users.user_id;

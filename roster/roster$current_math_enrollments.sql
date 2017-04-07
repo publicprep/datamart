@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW roster$current_math_enrollments AS
+--CREATE OR REPLACE VIEW roster$current_math_enrollments AS
 WITH math_sections AS
 (SELECT sd.*
  FROM roster$section_detail sd
@@ -15,10 +15,9 @@ math_enr AS
         ms.teacher_last,
         ss.student_id
  FROM math_sections ms
-   JOIN il_public.section_student_aff ss
+   JOIN il_dna_public.section_student_aff ss
      ON ms.section_id = ss.section_id
- WHERE ss.active = TRUE
-   AND ss.leave_date IS NULL
+ WHERE ss.leave_date IS NULL
 ),
 math_rollup AS
 (SELECT course_name,

@@ -1,3 +1,5 @@
+--DROP VIEW assess$test_prep_math$results;
+
 CREATE OR REPLACE VIEW assess$test_prep_math$results AS
 WITH math_assess AS
     (SELECT *
